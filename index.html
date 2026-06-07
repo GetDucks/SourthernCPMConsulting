@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Background photos that change while scrolling -->
+    <div class="scroll-backgrounds">
+      <div
+        class="bg-image active"
+        style="background-image: url(&quot;images/construction-1.jpg&quot;)"
+      ></div>
+      <div
+        class="bg-image"
+        style="background-image: url(&quot;images/construction-2.jpg&quot;)"
+      ></div>
+      <div
+        class="bg-image"
+        style="background-image: url(&quot;images/construction-3.jpg&quot;)"
+      ></div>
+      <div
+        class="bg-image"
+        style="background-image: url(&quot;images/construction-4.jpg&quot;)"
+      ></div>
+      <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Header -->
     <header class="site-header">
       <div class="container nav-container">
         <a href="#home" class="logo">
@@ -49,11 +71,9 @@
 
     <main>
       <!-- Hero -->
-      <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-
+      <section class="hero" id="home" data-bg="0">
         <div class="container hero-content">
-          <div class="hero-text">
+          <div class="hero-text glass-panel dark-panel">
             <p class="eyebrow">
               Construction Scheduling • CPM Analysis • Project Controls
             </p>
@@ -78,10 +98,12 @@
                 <strong>CPM</strong>
                 <span>Scheduling</span>
               </div>
+
               <div>
                 <strong>P6</strong>
                 <span>Support</span>
               </div>
+
               <div>
                 <strong>Field</strong>
                 <span>Focused</span>
@@ -91,7 +113,9 @@
 
           <div class="hero-card">
             <div class="card-topline"></div>
+
             <h2>Project Schedule Support</h2>
+
             <p>
               From baseline development to delay analysis, we help turn project
               complexity into clear timelines, milestones, and action plans.
@@ -108,11 +132,12 @@
       </section>
 
       <!-- Scheduling Animation -->
-      <section class="schedule-animation-section">
+      <section class="schedule-animation-section" data-bg="1">
         <div class="container schedule-animation-grid">
-          <div class="schedule-animation-text">
+          <div class="schedule-animation-text glass-panel">
             <p class="eyebrow">Construction Scheduling in Motion</p>
             <h2>See the critical path come together.</h2>
+
             <p>
               Our scheduling approach connects planning, sequencing, milestones,
               procurement, and field execution into one clear project timeline.
@@ -184,9 +209,9 @@
       </section>
 
       <!-- Services -->
-      <section class="section services-section" id="services">
+      <section class="section services-section" id="services" data-bg="2">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading glass-panel">
             <p class="eyebrow">What We Do</p>
             <h2>Scheduling services built for real construction projects.</h2>
             <p>
@@ -254,8 +279,8 @@
         </div>
       </section>
 
-      <!-- Construction Banner -->
-      <section class="construction-band">
+      <!-- Construction Band -->
+      <section class="construction-band" data-bg="3">
         <div class="container band-content">
           <div>
             <h2>
@@ -273,9 +298,9 @@
       </section>
 
       <!-- Process -->
-      <section class="section process-section" id="process">
+      <section class="section process-section" id="process" data-bg="0">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading glass-panel">
             <p class="eyebrow">Our Process</p>
             <h2>A straightforward approach to project scheduling.</h2>
           </div>
@@ -322,18 +347,16 @@
       </section>
 
       <!-- About -->
-      <section class="section about-section" id="about">
+      <section class="section about-section" id="about" data-bg="1">
         <div class="container about-grid">
-          <div class="about-image">
-            <div class="blueprint-card">
-              <span class="blueprint-line"></span>
-              <span class="blueprint-line short"></span>
-              <span class="blueprint-box"></span>
-              <span class="blueprint-box small"></span>
+          <div class="about-image-card">
+            <div class="about-badge">
+              <span>CPM</span>
+              <strong>Schedule Control</strong>
             </div>
           </div>
 
-          <div class="about-text">
+          <div class="about-text glass-panel">
             <p class="eyebrow">About Southern CPM Consulting</p>
             <h2>
               Built for contractors who need schedules that actually help the
@@ -374,9 +397,9 @@
       </section>
 
       <!-- Industries -->
-      <section class="section industries-section">
+      <section class="section industries-section" data-bg="2">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading centered-heading dark-glass-panel">
             <p class="eyebrow">Project Types</p>
             <h2>Supporting construction teams across multiple sectors.</h2>
           </div>
@@ -395,11 +418,12 @@
       </section>
 
       <!-- Contact -->
-      <section class="section contact-section" id="contact">
+      <section class="section contact-section" id="contact" data-bg="3">
         <div class="container contact-grid">
-          <div class="contact-info">
+          <div class="contact-info glass-panel">
             <p class="eyebrow">Contact Us</p>
             <h2>Need help with a construction schedule?</h2>
+
             <p>
               Tell us about your project, schedule issue, or upcoming bid. We
               can help with baseline development, P6 support, schedule updates,
