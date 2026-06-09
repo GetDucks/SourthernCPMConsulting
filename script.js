@@ -37,27 +37,13 @@ if (wowButton) {
         const x = event.clientX - rect.left - rect.width / 2;
         const y = event.clientY - rect.top - rect.height / 2;
 
-        wowButton.style.transform = `translate(${x * 0.12}px, ${y * 0.18}px) scale(1.05)`;
+        wowButton.style.transform = `translate(${x * 0.12}px, ${
+            y * 0.18
+        }px) scale(1.05)`;
     });
 
     wowButton.addEventListener("mouseleave", () => {
         wowButton.style.transform = "";
-    });
-
-    wowButton.addEventListener("click", (event) => {
-        const rect = wowButton.getBoundingClientRect();
-
-        const ripple = document.createElement("span");
-        ripple.classList.add("ripple");
-
-        ripple.style.left = `${event.clientX - rect.left}px`;
-        ripple.style.top = `${event.clientY - rect.top}px`;
-
-        wowButton.appendChild(ripple);
-
-        setTimeout(() => {
-            ripple.remove();
-        }, 700);
     });
 }
 
