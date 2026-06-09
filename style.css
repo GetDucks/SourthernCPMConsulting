@@ -271,18 +271,19 @@ main,
 
 .button-glow {
     position: absolute;
-    inset: -60%;
+    left: -45%;
+    top: 0;
     z-index: -2;
-    background: conic-gradient(
-        from 0deg,
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
         transparent,
-        rgba(255, 255, 255, 0.9),
-        transparent,
-        rgba(245, 166, 35, 0.8),
+        rgba(255, 255, 255, 0.55),
         transparent
     );
     opacity: 0;
-    animation: rotateGlow 2.4s linear infinite;
+    transform: skewX(-18deg);
 }
 
 .wow-button::before {
@@ -310,7 +311,8 @@ main,
 }
 
 .wow-button:hover .button-glow {
-    opacity: 0.5;
+    opacity: 1;
+    animation: loadingBarSweep 1.15s ease-in-out infinite;
 }
 
 .wow-button:hover::before {
@@ -323,13 +325,111 @@ main,
     z-index: 2;
 }
 
-.button-arrow {
-    font-size: 1.3rem;
+.flagger-icon {
+    position: relative;
+    z-index: 2;
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-left: 4px;
     transition: transform 0.25s ease;
 }
 
-.wow-button:hover .button-arrow {
+.flagger-head {
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    width: 8px;
+    height: 8px;
+    background: #07182f;
+    border-radius: 50%;
+}
+
+.flagger-hardhat {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    width: 12px;
+    height: 6px;
+    background: #ffffff;
+    border: 2px solid #07182f;
+    border-bottom: 0;
+    border-radius: 10px 10px 2px 2px;
+}
+
+.flagger-hardhat::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    bottom: -2px;
+    width: 12px;
+    height: 2px;
+    background: #07182f;
+    border-radius: 999px;
+}
+
+.flagger-body {
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    width: 5px;
+    height: 11px;
+    background: #07182f;
+    border-radius: 999px;
+}
+
+.flagger-arm {
+    position: absolute;
+    height: 3px;
+    background: #07182f;
+    border-radius: 999px;
+    transform-origin: left center;
+    transition: all 0.25s ease;
+}
+
+.arm-left {
+    left: 11px;
+    top: 13px;
+    width: 8px;
+    transform: rotate(145deg);
+}
+
+.arm-right {
+    left: 14px;
+    top: 13px;
+    width: 8px;
+    transform: rotate(35deg);
+}
+
+.flagger-leg {
+    position: absolute;
+    top: 21px;
+    width: 3px;
+    height: 9px;
+    background: #07182f;
+    border-radius: 999px;
+}
+
+.leg-left {
+    left: 10px;
+    transform: rotate(10deg);
+}
+
+.leg-right {
+    left: 15px;
+    transform: rotate(-10deg);
+}
+
+.wow-button:hover .flagger-icon {
     transform: translateX(6px);
+}
+
+.wow-button:hover .arm-right {
+    left: 14px;
+    top: 12px;
+    width: 12px;
+    transform: rotate(-6deg);
 }
 
 .ripple {
@@ -1179,6 +1279,20 @@ main,
 }
 
 /* Animations */
+
+@keyframes loadingBarSweep {
+    0% {
+        left: -45%;
+    }
+
+    55% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
 
 @keyframes shineSweep {
     from {
